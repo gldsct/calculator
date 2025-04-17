@@ -11,11 +11,20 @@ function multiply(firstNum, secondNum) {
 }
 
 function divide(firstNum, secondNum) {
-    if (secondNum === 0) {
+    if (secondNum == 0) {
         return "Error";
     }
     else {
         return +firstNum / +secondNum;
+    }
+}
+
+function modulo(firstNum, secondNum) {
+    if (secondNum == 0) {
+        return "Error";
+    }
+    else {
+        return +firstNum % secondNum;
     }
 }
 
@@ -55,6 +64,9 @@ equalsButton.addEventListener("click", (event) => {
             break;
         case "/":
             expressionCalc = divide(expressionArray[0], expressionArray[2]);
+            break;
+        case "%":
+            expressionCalc = modulo(expressionArray[0], expressionArray[2]);
             break;
         default:
             break;
