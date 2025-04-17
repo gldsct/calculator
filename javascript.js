@@ -45,6 +45,11 @@ numericButtons.forEach((button) => {
 
 operatorButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
+        if (display.textContent.split(" ").length >= 3) {
+            let clickEvent = new Event("click");
+            equalsButton.dispatchEvent(clickEvent);
+            display.textContent = results.textContent;
+        }
         display.textContent += ` ${event.target.textContent} `;
     });
 });
