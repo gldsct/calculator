@@ -39,6 +39,10 @@ clearButton = document.querySelector("#clear");
 
 numericButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
+        if (results.textContent != "0") {
+            display.textContent = "";
+            results.textContent = "0";
+        }
         display.textContent += `${event.target.textContent}`;
     });
 });
