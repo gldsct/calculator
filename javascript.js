@@ -30,13 +30,13 @@ clearButton = document.querySelector("#clear");
 
 numericButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
-        display.textContent += `${event.target.textContent} `;
+        display.textContent += `${event.target.textContent}`;
     });
 });
 
 operatorButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
-        display.textContent += `${event.target.textContent} `;
+        display.textContent += ` ${event.target.textContent} `;
     });
 });
 
