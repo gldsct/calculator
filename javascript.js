@@ -76,7 +76,7 @@ equalsButton.addEventListener("click", (event) => {
         default:
             break;
     }
-    results.textContent = `${expressionCalc}`;
+    results.textContent = `${+expressionCalc.toFixed(3)}`;
 });
 
 clearButton.addEventListener("click", (event) => {
