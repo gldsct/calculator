@@ -55,28 +55,30 @@ operatorButtons.forEach((button) => {
 });
 
 equalsButton.addEventListener("click", (event) => {
-    let expression = display.textContent;
-    let expressionArray = expression.split(" ");
-    switch (expressionArray[1]) {
-        case "+":
-            expressionCalc = add(expressionArray[0], expressionArray[2]);
-            break;
-        case "-":
-            expressionCalc = subtract(expressionArray[0], expressionArray[2]);
-            break;
-        case "x":
-            expressionCalc = multiply(expressionArray[0], expressionArray[2]);
-            break;
-        case "/":
-            expressionCalc = divide(expressionArray[0], expressionArray[2]);
-            break;
-        case "%":
-            expressionCalc = modulo(expressionArray[0], expressionArray[2]);
-            break;
-        default:
-            break;
+    if (display.textContent.split(" ").length === 3) {
+        let expression = display.textContent;
+        let expressionArray = expression.split(" ");
+        switch (expressionArray[1]) {
+            case "+":
+                expressionCalc = add(expressionArray[0], expressionArray[2]);
+                break;
+            case "-":
+                expressionCalc = subtract(expressionArray[0], expressionArray[2]);
+                break;
+            case "x":
+                expressionCalc = multiply(expressionArray[0], expressionArray[2]);
+                break;
+            case "/":
+                expressionCalc = divide(expressionArray[0], expressionArray[2]);
+                break;
+            case "%":
+                expressionCalc = modulo(expressionArray[0], expressionArray[2]);
+                break;
+            default:
+                break;
+        }
+        results.textContent = `${+expressionCalc.toFixed(3)}`;
     }
-    results.textContent = `${+expressionCalc.toFixed(3)}`;
 });
 
 clearButton.addEventListener("click", (event) => {
