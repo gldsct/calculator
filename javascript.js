@@ -55,7 +55,7 @@ operatorButtons.forEach((button) => {
 });
 
 equalsButton.addEventListener("click", (event) => {
-    if (display.textContent.split(" ").length === 3) {
+    if (display.textContent.split(" ").length == 3) {
         let expression = display.textContent;
         let expressionArray = expression.split(" ");
         switch (expressionArray[1]) {
@@ -77,7 +77,12 @@ equalsButton.addEventListener("click", (event) => {
             default:
                 break;
         }
-        results.textContent = `${+expressionCalc.toFixed(3)}`;
+        if (typeof expressionCalc === "number") {
+            results.textContent = `${+expressionCalc.toFixed(3)}`;
+        }
+        else {
+            results.textContent = `${expressionCalc}`;
+        }
     }
 });
 
