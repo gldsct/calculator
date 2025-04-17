@@ -8,3 +8,103 @@ html {
     margin: 0;
     font-family: "Trebuchet MS", sans-serif;
 }
+
+/* Body */
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 96px;
+    background-color: #D3D3D3;
+}
+
+/* Header Section */
+
+header {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 2px solid #F28482;
+}
+
+/* Main Section */
+
+main {
+    border-radius: 8px;
+    border: 2px solid #F5CAC3;
+    flex: auto;
+}
+
+.calc-container {
+    width: 450px;
+    height: 100%;
+    padding: 32px;
+    border-radius: 8px;
+    background-color: #F7EDE2;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.results {
+    height: 15%;
+    padding: 24px 0;
+    font-size: 32px;
+    color: #F28482;
+}
+
+.display {
+    height: 10%;
+    padding: 16px 0;
+    border-bottom: 2px solid #F5CAC3;
+}
+
+.buttons {
+    flex: auto;
+    padding: 32px 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    gap: 4px;
+}
+
+.buttons > * {
+    width: 92px;
+    flex: auto;
+    background-color: #F5CAC3;
+    border-radius: 8px;
+
+    font-size: 20px;
+}
+
+.buttons #clear {
+    width: 190px;
+    flex: 1 1 auto;
+}
+
+.buttons #zero {
+    width: 190px;
+    flex: 2 1 auto;
+}
+
+#divide,
+#multiply,
+#add,
+#minus,
+#equals {
+    background-color: #F28482;;
+}
+
+#equals {
+    font-size: 32px;
+    color: white;
+}
+
+/* Footer Section */
+
+footer {
+    padding: 16px;
+    border-top: 2px solid #F28482;
+}
