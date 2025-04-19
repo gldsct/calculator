@@ -37,11 +37,14 @@ operatorButtons = document.querySelectorAll(".operator");
 equalsButton = document.querySelector("#equals");
 clearButton = document.querySelector("#clear");
 
+let isCalculated = false;
+
 numericButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
-        if (results.textContent != "0") {
+        if (isCalculated === true) {
             display.textContent = "";
             results.textContent = "0";
+            isCalculated = false;
         }
         display.textContent += `${event.target.textContent}`;
     });
@@ -49,6 +52,11 @@ numericButtons.forEach((button) => {
 
 operatorButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
+        if (isCalculated === true) {
+            display.textContent = "";
+            results.textContent = "0";
+            isCalculated = false;
+        }
         if (display.textContent.split(" ").length >= 3) {
             let clickEvent = new Event("click");
             equalsButton.dispatchEvent(clickEvent);
@@ -86,6 +94,9 @@ equalsButton.addEventListener("click", (event) => {
         }
         else {
             results.textContent = `${expressionCalc}`;
+        }
+        if (event.isTrusted) {
+            isCalculated = true;
         }
     }
 });
